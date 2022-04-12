@@ -12,9 +12,9 @@ const [record,setRecord] = useState([]);
 
 const getDetails = (e) =>{
     e.preventDefault();
-    const newInfo = {...empInfo,id:new Date().getTime().toString()}
-    console.log(newInfo)
+    const newInfo = {...empInfo}
     setRecord([...record,newInfo])
+    record.push(newInfo)
     console.log(record)
     setInfo({name:"",dep:"",rating:""})
 }
@@ -35,9 +35,9 @@ const getDetails = (e) =>{
         <br/>   <br/>   <br/>
         <div className='container'>
           {
-            record.map((current)=>{
+            record.map((current,index)=>{
                   return (
-                    <div className='box'>
+                    <div key={index} className='box'>
                      Name : {current.name}<br/>
                      Department : {current.dep}<br/>
                      Rating : {current.rating}<br/>
