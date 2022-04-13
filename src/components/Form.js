@@ -13,7 +13,7 @@ const [record,setRecord] = useState([]);
 const getDetails = (e) =>{
     e.preventDefault();
     setRecord([...record,empInfo])
-    record.unshift(empInfo)
+    record.push(empInfo)
     console.log(record)
     setInfo({name:"",dep:"",rating:""})
 }
