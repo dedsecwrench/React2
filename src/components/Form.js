@@ -9,15 +9,20 @@ const [empInfo,setInfo] = useState({
   rating:""
 });
 const [record,setRecord] = useState([]);
-
+const [msg,setMsg] = useState("");
 const getDetails = (e) =>{
     e.preventDefault();
     setRecord([...record,empInfo])
     record.push(empInfo)
     console.log(record)
     setInfo({name:"",dep:"",rating:""})
+    showMsg();
 }
-
+const showMsg = () =>{
+  if (record.length == 5){
+    setMsg("Scroll down to see more!")
+  }
+}
   return (
     <div>
         <h1>Employee Feedback Form</h1><br/>
@@ -32,6 +37,7 @@ const getDetails = (e) =>{
         </form>
         <button className='btn btn-success' onClick={getDetails}>Submit</button>
         <br/>   <br/>   <br/>
+           {<h4>{msg}</h4>}
            <div className='container'>
                 {
                   record.map((current,index) => {
