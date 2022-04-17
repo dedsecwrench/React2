@@ -32,18 +32,17 @@ const getDetails = (e) =>{
         </form>
         <button className='btn btn-success' onClick={getDetails}>Submit</button>
         <br/>   <br/>   <br/>
-        <div className='container'>
-          {
-            record.map((current,index)=>{
-                  return (
-                    <div key={index} className='box'>
-                     Name : {current.name}<br/>
-                     Department : {current.dep}<br/>
-                     Rating : {current.rating}<br/>
-                    </div>
-                  )
-            })
-          }
+           <div className='container'>
+                {
+                  Record.map((current,index) => {
+                      return (
+                          <div className='box' key={index}>
+                             <b> Name :</b> <span>{current.name}</span><br />
+                             <b> Department :</b> <span>{current.dep}</span><br />
+                             <b> Rating : </b><span>{current.rating}</span><br />
+                          </div>
+                      )
+                  })}
         </div>
 
     </div>
