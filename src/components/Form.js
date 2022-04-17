@@ -34,7 +34,7 @@ const getDetails = (e) =>{
         <br/>   <br/>   <br/>
            <div className='container'>
                 {
-                  Record.map((current,index) => {
+                  record.map((current,index) => {
                       return (
                           <div className='box' key={index}>
                              <b> Name :</b> <span>{current.name}</span><br />
