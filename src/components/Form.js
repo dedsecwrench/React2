@@ -19,7 +19,7 @@ const getDetails = (e) =>{
     showMsg();
 }
 const showMsg = () =>{
-  if (record.length == 5){
+  if (record.length > 4){
     setMsg("Scroll down to see more!")
   }
 }
